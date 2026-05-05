@@ -31,22 +31,19 @@
               "includeAll": true,
               "showDefault": false
             },
-            "defaultValue": "value::all",
-            "value": [
-              "value::all"
-            ]
+            "defaultValue": "value::all"
           },
           {
             "id": "b7c8d9e0-f1a2-3456-bcde-f12345678901",
             "version": "KqlParameterItem/1.0",
             "name": "ResourceGroup",
             "label": "Resource Group",
-            "type": 2,
+            "type": 1,
             "isRequired": false,
             "multiSelect": true,
             "quote": "'",
             "delimiter": ",",
-            "query": "resourcecontainers | where type =~ 'microsoft.resources/subscriptions/resourcegroups' | where subscriptionId in~ ({Subscriptions:subscriptionid}) | project id, name | order by name asc",
+            "query": "resources | where type == 'microsoft.hybridcompute/machines' | distinct resourceGroup | order by resourceGroup asc",
             "crossComponentResources": [
               "value::all"
             ],
@@ -54,7 +51,6 @@
               "additionalResourceOptions": [
                 "value::all"
               ],
-              "includeAll": true,
               "showDefault": false
             },
             "queryType": 1,
@@ -63,8 +59,8 @@
           }
         ],
         "style": "pills",
-        "queryType": 0,
-        "resourceType": "microsoft.resources/subscriptions"
+        "queryType": 1,
+        "resourceType": "microsoft.resourcegraph/resources"
       },
       "name": "parameters"
     },
