@@ -65,6 +65,34 @@ The workbook definition in Azure Monitor Notebook 1.0 format. Uses:
 
 ---
 
+## Deployment Options
+
+There are two ways to deploy the workbook — Terraform (automated, repeatable) or manual import via the Azure Portal (quick, no tooling required).
+
+---
+
+## Option 1: Manual Import via Azure Portal
+
+No tooling required. Use this for a quick one-off deployment.
+
+1. In the Azure Portal, navigate to **Monitor** → **Workbooks**
+2. Click **+ New**
+3. Click the **Advanced Editor** button (`</>`) in the toolbar
+4. Delete the default content and paste the full contents of [`workbook/arc-dashboard.json`](workbook/arc-dashboard.json)
+5. Click **Apply**
+6. Click **Save** and fill in:
+   - **Title** — e.g. `Arc Servers Dashboard`
+   - **Subscription** / **Resource group** — where you want to save it
+   - **Location**
+   - Set visibility to **Shared** so others in your organization can access it
+7. Click **Apply**
+
+The workbook is now accessible under **Monitor** → **Workbooks** for anyone with Reader access.
+
+---
+
+## Option 2: Terraform Deployment
+
 ## Prerequisites
 
 - [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.3.0
