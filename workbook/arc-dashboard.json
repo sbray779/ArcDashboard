@@ -10,6 +10,42 @@
       "styleSettings": {}
     },
     {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "parameters": [
+          {
+            "id": "b7c8d9e0-f1a2-3456-bcde-f12345678901",
+            "version": "KqlParameterItem/1.0",
+            "name": "ResourceGroup",
+            "label": "Resource Group",
+            "type": 1,
+            "isRequired": false,
+            "multiSelect": true,
+            "quote": "'",
+            "delimiter": ",",
+            "query": "resources | where type == 'microsoft.hybridcompute/machines' | distinct resourceGroup | order by resourceGroup asc",
+            "crossComponentResources": [
+              "value::all"
+            ],
+            "typeSettings": {
+              "additionalResourceOptions": [
+                "value::all"
+              ],
+              "showDefault": false
+            },
+            "queryType": 1,
+            "resourceType": "microsoft.resourcegraph/resources",
+            "defaultValue": "value::all"
+          }
+        ],
+        "style": "pills",
+        "queryType": 1,
+        "resourceType": "microsoft.resourcegraph/resources"
+      },
+      "name": "parameters"
+    },
+    {
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
@@ -22,6 +58,7 @@
           "value::all"
         ],
         "showRefreshButton": true,
+        "showExportToExcel": true,
         "gridSettings": {
           "filter": true,
           "sortBy": [
@@ -47,6 +84,7 @@
           "value::all"
         ],
         "showRefreshButton": true,
+        "showExportToExcel": true,
         "gridSettings": {
           "filter": true,
           "sortBy": [
