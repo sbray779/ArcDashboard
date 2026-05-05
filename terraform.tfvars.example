@@ -1,0 +1,9 @@
+resource_group_name   = "rg-arc-dashboard"
+location              = "eastus"
+workbook_display_name = "Arc Servers Dashboard"
+
+tags = {
+  environment = "production"
+  workload    = "arc-dashboard"
+  owner       = "your-team"
+}
